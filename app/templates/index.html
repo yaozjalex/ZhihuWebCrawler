@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block questions %}
+<div class="page-header"><h1>Zhihu Hot Topic</h1></div>
+<div class="row">
+{% for question in questions %}
+    <div class="col-sm-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"><a href="http://www.zhihu.com/question/{{question[2]}}">{{question[1]}}</a></h3>
+        </div>
+        <div class="panel-body">
+          <ul class = "list-unstyled">
+            <li>Topic: <i>{{question[0]}}</i></li>
+            <li>Focus: <i>{{question[3]}}</i></li>
+            <li>Answer: <i>{{question[4]}}</i></li>
+            <li>Top Answer: <i>{{question[5]}}</i></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+{% endfor %}
+</div>
+{% endblock %}
